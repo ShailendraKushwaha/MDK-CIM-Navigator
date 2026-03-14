@@ -1,0 +1,42 @@
+{
+  "name": "mdk-cim-navigator",
+  "description": "Navigate SAP MDK CIM overrides directly from the editor.",
+  "publisher": "ShailendraKumar",
+  "displayName": "MDK CIM Navigator",
+  "version": "0.0.1",
+  "icon":"icon.png",
+  "engines": {
+  "vscode": "^1.75.0"
+},
+  "categories": [
+    "Debuggers"
+  ],
+  "activationEvents": ["workspaceContains:**/*.cim"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "mdk-cim-navigator.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.110.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.39.3",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1"
+  }
+}
